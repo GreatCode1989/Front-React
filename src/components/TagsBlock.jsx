@@ -14,12 +14,13 @@ export const TagsBlock = ({ items, isLoading = true }) => {
   return (
     <SideBlock title="Тэги">
       <List>
-        {(isLoading ? [...Array(5)] : items).map((name, i) => (
+        {items.map((item) => (
           <a
             style={{ textDecoration: "none", color: "black" }}
-            href={`/tags/${name}`}
+            href={`/tags/${item.id}`}
+            key={item.id}
           >
-            <ListItem key={i} disablePadding>
+            <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   <TagIcon />
@@ -27,7 +28,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
                 {isLoading ? (
                   <Skeleton width={100} />
                 ) : (
-                  <ListItemText primary={name} />
+                  <ListItemText primary={item.name} />
                 )}
               </ListItemButton>
             </ListItem>
