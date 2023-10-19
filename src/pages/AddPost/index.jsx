@@ -58,7 +58,7 @@ export const AddPost = () => {
 
       const id = data._id;
 
-      navigate(`/post/${id}`);
+      navigate(`/posts/${id}`);
     } catch (err) {
       console.warn(err);
       alert("Ошибка при создании статьи");

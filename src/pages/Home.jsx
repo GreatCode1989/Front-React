@@ -46,7 +46,7 @@ export const Home = () => {
                   key={obj._id}
                   _id={obj._id}
                   title={obj.title}
-                  imageUrl={obj.imageUrl}
+                  imageUrl={obj.imageUrl ?`http://localhost:3005/${obj.imageUrl}` : ''}
                   user={obj.user}
                   createdAt={obj.createdAt}
                   viewsCount={obj.viewCount}
